@@ -1,0 +1,15 @@
+$font-weight: (
+    "normal":400,
+    "bold":700
+);
+
+// function for the map
+
+@function weight($weight-name){
+    @return map-get($font-weight, $weight-name);
+}
+
+// this is reduced from 
+// 'font-weight: map-get($font-weight,bold);' 
+// to 
+// 'font-weight: weight(bold);'
