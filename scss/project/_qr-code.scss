@@ -19,16 +19,25 @@
     &__top{
         @include f-center(row);
         width: 100%;
-    }
-
-    &__qr{
-        max-width: 100%;
         border-radius: .7rem;
+        overflow: hidden;
         -webkit-border-radius: .7rem;
         -moz-border-radius: .7rem;
         -ms-border-radius: .7rem;
         -o-border-radius: .7rem;
 }
+
+    &__qr{
+        position: relative;
+        max-width: 100%;
+
+        &:hover{
+            animation-name: pulse;
+            animation-iteration-count: infinite;
+            animation-duration: 2s;
+            animation-timing-function: ease-in
+        }
+    }
 
 // text section 
     
@@ -54,5 +63,15 @@
                 font-size: .9rem;
             }
         }
+    }
+}
+
+// desktop view
+
+@media  screen and (min-width: 400px) {
+
+    .card{
+        max-width: 310px;
+        height: auto;
     }
 }

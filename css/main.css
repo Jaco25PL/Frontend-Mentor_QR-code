@@ -1,3 +1,26 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -35,14 +58,22 @@ html {
   justify-content: center;
   flex-direction: row;
   width: 100%;
-}
-.card__qr {
-  max-width: 100%;
   border-radius: 0.7rem;
+  overflow: hidden;
   -webkit-border-radius: 0.7rem;
   -moz-border-radius: 0.7rem;
   -ms-border-radius: 0.7rem;
   -o-border-radius: 0.7rem;
+}
+.card__qr {
+  position: relative;
+  max-width: 100%;
+}
+.card__qr:hover {
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
 }
 .card__desc {
   display: flex;
@@ -65,6 +96,13 @@ html {
 .card__desc-bottom-p {
   color: #9c9fa8;
   font-size: 0.9rem;
+}
+
+@media screen and (min-width: 400px) {
+  .card {
+    max-width: 310px;
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
